@@ -11,11 +11,10 @@ import log_helper
 
 client = docker.from_env()
 parser = argparse.ArgumentParser(description='Docker container chaos')
-parser.add_argument('--name', help='container name regex pattern', dest='name', required=True)
-parser.add_argument('--sleep', type=int, default=30,
+parser.add_argument('-n', '--name', help='container name regex pattern', dest='name', required=True)
+parser.add_argument('-s', '--sleep', type=int, default=30,
                     help='sleep duration in seconds between consecutive actions', dest='sleep')
-parser.add_argument("-v", "--verbose", help="increase output verbosity",
-                    action="store_true")
+parser.add_argument("-v", "--verbose", help="increase output verbosity", action="store_true")
 logger = log_helper.get_logger()
 
 def signal_handler(signal, frame):
