@@ -1,9 +1,9 @@
 import argparse
 import random
 import re
+import signal
 import sys
 import time
-import signal
 
 import docker
 
@@ -62,7 +62,7 @@ def sleep_between_restarts(interval):
     time.sleep(interval)
 
 
-if __name__ == '__main__':
+def run():
     args = parser.parse_args()
     if args.verbose:
         log_helper.enable_debug_level()

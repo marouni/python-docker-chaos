@@ -1,14 +1,23 @@
 # Docker Chaos Monkey
-Chaos monkey for your local docker
+Chaos monkey for your Docker containers
+
+## Supported actions
+* Randomly restart containers that match a regex
 
 ## Install
-In a python virtual environment  
+In a python virtual environment
 ```
-pip install -r requirements.txt
+pip install docker_chaos_monkey
 ```
 
 ## Usage
-`python driver.py --help` :
+Randomly restart a container that matches _my_container*_ each 30 seconds :
+```
+docker-chaos-monkey -n my_container* -s 30
+```
+
+## Help
+`docker-chaos-monkey--help` :
 ```
 usage: driver.py [-h] -n NAME [-s SLEEP] [-v]
 
@@ -20,6 +29,3 @@ optional arguments:
   -s SLEEP, --sleep SLEEP sleep duration in seconds between consecutive actions
   -v, --verbose           increase output verbosity
 ```
-
-## Supported actions
-* Randomly restart containers that match a regex
