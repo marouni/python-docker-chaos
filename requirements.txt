@@ -1,5 +1,5 @@
 backports.ssl-match-hostname==3.5.0.1
-certifi==2017.7.27.1
+certifi==2022.12.7
 chardet==3.0.4
 colorlog==3.1.0
 docker==2.5.1
